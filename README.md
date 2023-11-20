@@ -20,4 +20,5 @@
 18)	const cookies = new Cookies();
 19)	  const token = cookies.get("token");
 20)	<link rel="stylesheet" href="https://unpkg.com/primeicons@6.0.1/primeicons.css">
+21) <Outlet/> : <Navigate to="/login" state={{from : location}} replace/>
 
