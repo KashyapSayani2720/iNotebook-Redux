@@ -21,4 +21,28 @@
 19)	  const token = cookies.get("token");
 20)	<link rel="stylesheet" href="https://unpkg.com/primeicons@6.0.1/primeicons.css">
 21) <Outlet/> : <Navigate to="/login" state={{from : location}} replace/>
-
+22) {
+  "name": "inotebook-backend",
+  "version": "1.0.0",
+  "description": "iNotebook - Your notebook on the cloud",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
