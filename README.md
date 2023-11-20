@@ -46,3 +46,41 @@
     "nodemon": "^2.0.19"
   }
 }
+23) const express = require('express');
+const app = express();
+const port = 5000
+const connectToMongo = require('./db');
+const cors = require('cors');
+
+connectToMongo();
+
+// json() is a built-in middleware function in Express. This method is used to parse the incoming requests with JSON payloads and is based upon the bodyparser. 
+app.use(express.json());
+// Calling use(cors()) will enable the express server to respond to preflight requests. A preflight request is basically an OPTION request sent to the server before the actual request is sent, in order to ask which origin and which request options the server accepts.
+app.use(cors());
+
+// Available Routes
+app.use('/api/auth',require('./routes/auth'))
+app.use('/api/note',require('./routes/note'))
+
+app.listen(port, () => {
+  console.log(`iNotebook backend listening on port ${port}`)
+})
+24) const mongoose = require('mongoose')
+const mongoURI = "mongodb://127.0.0.1:27017/inotebook?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false";
+
+const connectToMongo = () => {
+    mongoose.connect(mongoURI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    }, (err) => {
+        if (err) {
+            console.error("Error connecting to Mongo:", err);
+        } else {
+            console.log("Connected to Mongo Successfully");
+        }
+    });
+    
+}
+
+module.exports = connectToMongo;
