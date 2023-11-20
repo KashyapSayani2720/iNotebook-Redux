@@ -84,3 +84,6 @@ const connectToMongo = () => {
 }
 
 module.exports = connectToMongo;
+25) const salt = await bcrypt.genSalt(10);
+    const secPass = await bcrypt.hash(req.body.password, salt);  
+    const authToken = jwt.sign(data, JWT_SECRET);
